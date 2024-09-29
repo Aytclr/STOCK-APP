@@ -1,19 +1,18 @@
-import Avatar from "@mui/material/Avatar"
-import Container from "@mui/material/Container"
-import Grid from "@mui/material/Grid"
-import Typography from "@mui/material/Typography"
-import LockIcon from "@mui/icons-material/Lock"
-import image from "../assets/result.svg"
-import { Link } from "react-router-dom"
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import { Button } from "@mui/material"
-import { Formik,Form } from "formik"
+import Avatar from "@mui/material/Avatar";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import LockIcon from "@mui/icons-material/Lock";
+import image from "../assets/result.svg";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
+import { Formik, Form } from "formik";
 
 const Login = () => {
-
-  const loginSchema={}
-    return (
+  const loginSchema = {};
+  return (
     <Container maxWidth="lg">
       <Grid
         container
@@ -50,43 +49,36 @@ const Login = () => {
             Login
           </Typography>
 
-            <Formik
-            initialValues={{email:"",password:""}}
+          <Formik
+            initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
-            onSubmit={(values,action)=>{
-              
-
-            }}
-
-
-
-            >
-
-            </Formik>
-
-
-          <Box
-            component="form"
-            sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+            onSubmit={(values, action) => {}}
           >
-            <TextField
-              label="Email"
-              name="email"
-              id="email"
-              type="email"
-              variant="outlined"
-            />
-            <TextField
-              label="password"
-              name="password"
-              id="password"
-              type="password"
-              variant="outlined"
-            />
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
-          </Box>
+            {() => (
+              <Form>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                <TextField
+                  label="Email"
+                  name="email"
+                  id="email"
+                  type="email"
+                  variant="outlined"
+                />
+                <TextField
+                  label="password"
+                  name="password"
+                  id="password"
+                  type="password"
+                  variant="outlined"
+                />
+                <Button variant="contained" type="submit">
+                  Submit
+                </Button>
+              </Box>
+              </Form>
+              
+            )}
+          </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
             <Link to="/register">Do you have not an account?</Link>
@@ -100,7 +92,7 @@ const Login = () => {
         </Grid>
       </Grid>
     </Container>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
